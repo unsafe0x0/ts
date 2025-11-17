@@ -25,10 +25,13 @@ bun run src/file-name.ts
 
 ```
 ├── src/
-│   └── cache.ts           # Example usage of both cache implementations
+│   ├── cache.ts              # Example usage of cache implementations
+│   └── rate-limmiter.ts      # Example usage of token bucket rate limiter
 ├── cache/
-│   ├── in-memory.ts       # In-Memory Cache implementation
-│   └── lru.ts             # LRU Cache implementation
+│   ├── in-memory.ts          # In-Memory Cache implementation
+│   └── lru.ts                # LRU Cache implementation
+├── rate-limmiter/
+│   └── toke-bucket.ts        # Token Bucket Rate Limiter implementation
 ├── package.json
 ├── tsconfig.json
 └── README.md
@@ -51,6 +54,22 @@ bun run src/file-name.ts
 | `getLRUCache`    | `key: string`             | `any \| null` | Retrieves and marks value as recently used |
 | `removeLRUCache` | `key: string`             | `void`        | Removes a specific key from LRU cache      |
 | `clearLRUCache`  | -                         | `void`        | Clears all entries from LRU cache          |
+
+### Token Bucket Rate Limiter
+
+A rate limiting implementation using the Token Bucket algorithm to control request rates.
+
+**Class: `TokenBucket`**
+
+| Method         | Parameters                             | Returns   | Description                                                 |
+| -------------- | -------------------------------------- | --------- | ----------------------------------------------------------- |
+| `constructor`  | `capacity: number, refillRate: number` | -         | Initializes bucket with capacity and refill rate per second |
+| `allowRequest` | -                                      | `boolean` | Returns `true` if request is allowed, `false` otherwise     |
+
+**Parameters:**
+
+- `capacity`: Maximum number of tokens the bucket can hold
+- `refillRate`: Number of tokens added per second
 
 ---
 

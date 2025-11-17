@@ -8,7 +8,7 @@ const setCache = (key: string, value: any): void => {
     if (cache.has(key)) {
       cache.delete(key);
     }
-    if (cache.size >= MAX_CACHE_SIZE) {
+    if (cache.size <= MAX_CACHE_SIZE) {
       cache.set(key, value);
     } else {
       console.log("Cache size limit reached. Cannot add new item.");

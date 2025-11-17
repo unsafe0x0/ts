@@ -9,7 +9,7 @@ const setLRUCache = (key: string, value: any): void => {
     if (lruCache.has(key)) {
       lruCache.delete(key);
     }
-    if (lruCache.size >= MAX_CACHE_SIZE) {
+    if (lruCache.size <= MAX_CACHE_SIZE) {
       lruCache.set(key, value);
       const oldestKey = lruCache.keys().next().value;
       lruCache.delete(oldestKey as string);
