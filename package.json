@@ -1,5 +1,5 @@
 {
-  "name": "ts-redis",
+  "name": "ts",
   "module": "index.ts",
   "type": "module",
   "private": true,
