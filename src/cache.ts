@@ -10,7 +10,7 @@ import {
   removeLRUCache,
   clearLRUCache,
 } from "../cache/lru";
-import { setFIFOCache, getFIFOCache, removeFIFOCache, clearFIFOCache, getFullFIFOCache } from "../cache/fifo-";
+import { setFIFOCache, getFIFOCache, removeFIFOCache, clearFIFOCache, getFullFIFOCache } from "../cache/fifo";
 
 // Example usage of in-memory cache
 
